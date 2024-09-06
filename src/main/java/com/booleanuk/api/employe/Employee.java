@@ -17,21 +17,11 @@ public class Employee {
     private String salaryGrade;
     private String department;
 
-    public Employee(String name, String jobName, String salaryGrade, String department) {
+    public Employee(String name, String jobName, String salaries_id, String department_id) {
         this.name = name;
         this.jobName = jobName;
-        this.salaryGrade = salaryGrade;
-        this.department = department;
-    }
-
-    @Override
-    public String toString() {
-        String result = "";
-        result += this.id + " - ";
-        result += this.name + " - ";
-        result += this.salaryGrade + " - ";
-        result += this.department + " - ";
-        return result;
+        this.salaryGrade = salaries_id;
+        this.department = department_id;
     }
 
 }
