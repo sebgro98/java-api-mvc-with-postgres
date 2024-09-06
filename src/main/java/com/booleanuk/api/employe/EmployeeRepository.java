@@ -76,22 +76,23 @@ public class EmployeeRepository {
         statement.setString(4, employee.getDepartment());
         statement.setInt(5, id);
 
+        // Update the Departments table
 
         String updateDepartmentSQL = "UPDATE Departments " +
                 "SET department_name = ? " +
                 "WHERE id = ?";
         PreparedStatement updateDepartmentStmt = this.connectToDatabase.getConnection().prepareStatement(updateDepartmentSQL);
-        updateDepartmentStmt.setInt(1, employee.getDepartment());
+        updateDepartmentStmt.setString(1, employee.getDepartment());
         updateDepartmentStmt.setInt(2,id);
 
         updateDepartmentStmt.executeUpdate();
 
-
+        // Update the Salaries table
         String updateSalariesSQL = "UPDATE Salaries " +
                 "SET grade = ? " +
                 "WHERE id = ?";
         PreparedStatement updateSalariesStmt = this.connectToDatabase.getConnection().prepareStatement(updateSalariesSQL);
-        updateSalariesStmt.setInt(1, employee.getSalaryGrade());
+        updateSalariesStmt.setString(1, employee.getSalaryGrade());
         updateSalariesStmt.setInt(2,id);
 
         updateSalariesStmt.executeUpdate();
